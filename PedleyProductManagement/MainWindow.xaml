@@ -1,0 +1,55 @@
+﻿<Window x:Class="PedleyProductManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PedleyProductManagement"
+        mc:Ignorable="d"
+        Title="Pedley Product Management" Height="350" Width="525">
+    <Grid>
+        <!--Grid Definitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Menubar at top of screen-->
+        <DockPanel Grid.ColumnSpan="8">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File "> <!-- The _ before file creates a windows shortcut so it can be acsessed easily-->
+                    <MenuItem Header="User Login"></MenuItem>
+                    <MenuItem Header="Settings"></MenuItem>
+                    <MenuItem Header="Exit" Click="BtnFileExit_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Jobs">
+                    <MenuItem Header="_Create" Click="BtnJobsCreate_Click"/>
+                    <MenuItem Header="Load" Click="BtnJobsLoad_Click"/>
+                    <MenuItem Header="Unload"/>
+                    <MenuItem Header="View All"/>
+                </MenuItem>
+                <MenuItem Header="Inventory">
+                    <MenuItem Header="View All Items"></MenuItem>
+                    <MenuItem Header="Create New Item"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <!--Table of current items in job-->
+        <DataGrid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7" Grid.RowSpan="2" AutoGenerateColumns="True">
+            
+        </DataGrid>
+        
+    </Grid>
+</Window>
